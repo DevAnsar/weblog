@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: vazir;
 }
 
 a {
@@ -13,4 +12,16 @@ a {
 
 * {
   box-sizing: border-box;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "VAZIR";
+  src: url("../public/fonts/vazir/Vazir.ttf");
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }
