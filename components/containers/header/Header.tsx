@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const HeaderComponent = () => {
   return (
-    <header className="w-100 bg-white text-gray-800 font-md py-5 border-b-2">
+    <header className="w-100 bg-white text-gray-800 font-md py-5 border-b-2 sticky top-0 z-30">
       <div className="flex justify-between">
         <div className="flex">
           {/* <Image src={} /> */}
-          <nav className="px-3 flex items-center">
+          <nav className="px-3 items-center hidden md:flex">
             <Link href="/">
               <a className="px-2 py-1 mx-2 hover:text-blue-600 font-bold">
                 خانه
