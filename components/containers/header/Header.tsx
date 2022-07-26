@@ -1,15 +1,15 @@
-import Image from "next/image";
+import {MenuIcon} from "@heroicons/react/solid";
 import Link from "next/link";
 
 const HeaderComponent = () => {
   return (
     <header className="w-100 bg-white text-gray-800 font-md py-5 border-b-2 sticky top-0 z-30">
-      <div className="flex justify-between">
-        <div className="flex">
+      <div className="flex justify-between  px-5">
+        <div className="flex items-center">
           {/* <Image src={} /> */}
           <nav className="px-3 items-center hidden md:flex">
             <Link href="/">
-              <a className="px-2 py-1 mx-2 hover:text-blue-600 font-bold">
+              <a className="px-2 py-1 mx-2 text-slate-800 hover:text-blue-600 font-bold">
                 خانه
               </a>
             </Link>
@@ -34,6 +34,7 @@ const HeaderComponent = () => {
               </a>
             </Link>
           </nav>
+          <MenuIcon className=" md:hidden w-10 h-10" />
         </div>
         <div className="flex">
           <Link href="/start">

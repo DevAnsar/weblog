@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import type { NextPage } from "next";
-import type { BlogInterface } from "../types";
+import type { PostInterface } from "../types";
 import Head from "../components/containers/head/Head";
 import Layout from "../components/containers/layout/Layout";
 import BigBlogCart from "../components/blogs/BigBlogCart";
 import IndexSerchBox from "../components/serchers/IndexSerchBox";
-import Image from "next/image";
-import { ImageLoader } from "../utils/helper";
-import WriterImage from "../components/users/WriterImage";
 import BlogCart from "../components/blogs/BlogCart";
 
-const Home: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
+import CategoriesPanel from "../components/categories/Panel";
+
+const Home: NextPage<{ posts: PostInterface[] }> = ({ posts }) => {
   useEffect(() => {
-    console.log("blogs:", blogs);
+    console.log("posts:", posts);
   }, []);
 
   return (
@@ -26,34 +25,23 @@ const Home: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
         </div>
         <div className="flex justify-center my-24">
           <div className="w-4/5 md:w-3/4">
-            <BigBlogCart />
+            <BigBlogCart  post={posts[0]} />
           </div>
         </div>
 
         <div className="flex justify-center my-24">
           <div className="w-4/5 md:w-3/4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-              <div className="col-span-1">
-                <BlogCart />
-              </div>
-              <div className="col-span-1">
-                <BlogCart />
-              </div>
-              <div className="col-span-1">
-                <BlogCart />
-              </div>
-              <div className="col-span-1">
-                <BlogCart />
-              </div>
-              <div className="col-span-1">
-                <BlogCart />
-              </div>
-              <div className="col-span-1">
-                <BlogCart />
-              </div>
+              {posts.map((post,index) => (
+                <div className="col-span-1">
+                  <BlogCart key={index} post={post} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
+
+        <CategoriesPanel />
       </Layout>
     </>
   );
@@ -62,12 +50,19 @@ const Home: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  // const res = await fetch(`https://server.ansarmirzayi.ir/api/v1/blogs`)
-  // const data = await res.json()
-  // const blogs = data.status ? data.blogs as BlogInterface[] : []
-  const blogs: BlogInterface[] = [];
-  // Pass data to the page via props
-  return { props: { blogs } };
+  const res = await fetch(`http://localhost:8000/api/v1/index?recent=1`);
+  let posts: PostInterface[] = [];
+
+  if (res.ok) {
+    const data = await res.json();
+    posts = data.posts as PostInterface[];
+  }
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
 
 export default Home;

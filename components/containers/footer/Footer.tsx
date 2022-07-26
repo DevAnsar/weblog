@@ -1,6 +1,6 @@
 const FooterComponent = () => {
   return (
-    <footer className="bg-slate-50 py-5 px-5 grid grid-cols-5">
+    <footer className="bg-gray-100 py-5 px-5 grid grid-cols-5">
       <div className="col-span-5 lg:col-span-3">
         <div className="text-center lg:text-right mt-5">کلیه حقوق مجموعه برای انصار میرزایی محفوظ است</div>
       </div>

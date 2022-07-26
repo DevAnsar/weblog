@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { ImageLoader } from "../../utils/helper";
 import WriterImage from "../users/WriterImage";
+import type { PostInterface } from "../../types";
 
-const BigBlogCart = () => {
+const BigBlogCart = ({ post }: { post: PostInterface }) => {
   return (
     <div className="grid lg:grid-cols-5 gap-x-5">
       <div className="col-span-1 lg:col-span-2">
@@ -15,20 +16,19 @@ const BigBlogCart = () => {
             layout="responsive"
             objectFit="contain"
             loader={ImageLoader}
-            src="https://server.ansarmirzayi.ir/images/settings/IMG_20220316_193825_419.jpg"
+            src={post.image_url}
           />
         </div>
       </div>
 
       <div className="col-span-1 lg:col-span-3 flex flex-col justify-center w-full">
         <h1 className="font-bold text-2xl text-gray-900 leading-loose">
-          چطوری دوچرخه ی خود را برای تابستان استرالیا انتخاب کنیم؟
+          {post.title}
         </h1>
         <span className="font-bold text-base text-slate-400 mt-3 leading-loose">
-          چطوری دوچرخه ی خود را برای تابستان استرالیا انتخاب کنیم؟ چطوری دوچرخه
-          ی خود را برای تابستان استرالیا انتخاب کنیم؟
+          {post.excerpt}
         </span>
-        <WriterImage />
+        <WriterImage name={post.user.name} date={post.date_formatted} />
       </div>
     </div>
   );
