@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { ImageLoader } from "../../utils/helper";
+import Image from "../containers/Image";
 import WriterImage from "../users/WriterImage";
 import type { PostInterface } from "../../types";
 
@@ -8,16 +7,7 @@ const BigBlogCart = ({ post }: { post: PostInterface }) => {
     <div className="grid lg:grid-cols-5 gap-x-5">
       <div className="col-span-1 lg:col-span-2">
         <div className="rounded-2xl overflow-hidden w-full h-60">
-          <Image
-            alt=""
-            title=""
-            width="100%"
-            height="100%"
-            layout="responsive"
-            objectFit="contain"
-            loader={ImageLoader}
-            src={post.image_url}
-          />
+          <Image src={post.image_url} />
         </div>
       </div>
 

@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import type { NextPage, GetServerSideProps } from "next";
 import type { PostInterface } from "../../../types";
 import Head from "../../../components/containers/head/Head";
-import Image from "next/image";
-import { ImageLoader } from "../../../utils/helper";
+import Image from "../../../components/containers/Image";
 import WriterImage from "../../../components/users/WriterImage";
 import Layout from "../../../components/containers/layout/Layout";
 import CategoriesPanel from "../../../components/categories/Panel";
@@ -23,16 +22,7 @@ const Blog: NextPage<{ post: PostInterface }> = ({ post }) => {
               </div>
               <div className="col-span-1 mt-5">
                 <div className="rounded-2xl overflow-hidden w-full h-72">
-                  <Image
-                    alt=""
-                    title=""
-                    width="100%"
-                    height="100%"
-                    layout="responsive"
-                    objectFit="contain"
-                    loader={ImageLoader}
-                    src={post.image_url}
-                  />
+                  <Image src={post.image_url} />
                 </div>
               </div>
               <div className="col-span-1 flex flex-col justify-center w-full">
