@@ -21,7 +21,7 @@ const BlogCart = ({ post }: { post: PostInterface }) => {
           </div>
         </a>
       </Link>
-      <WriterImage name={post.user.name} date={post.date_formatted} />
+      <WriterImage name={post.user.name} image={post.user.image_url} date={post.date_formatted} />
     </div>
   );
 };

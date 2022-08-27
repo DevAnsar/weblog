@@ -2,6 +2,7 @@ export interface UserInterface{
     id : number;
     name : string;
     image? : string;
+    image_url? : string;
 }
 
 export interface CategoryInterface{

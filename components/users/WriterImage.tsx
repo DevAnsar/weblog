@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ImageLoader } from "../../utils/helper";
-
+import userIcon from "./../../public/images/person-1.jpeg";
 const WriterImage = ({
   name,
   date,
@@ -21,7 +21,7 @@ const WriterImage = ({
           layout="responsive"
           objectFit="contain"
           loader={ImageLoader}
-          src="https://server.ansarmirzayi.ir/images/settings/IMG_20220316_193825_419.jpg"
+          src={image || userIcon}
         />
       </div>
       <div className="flex flex-col pr-3">
