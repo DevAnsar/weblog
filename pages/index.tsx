@@ -11,7 +11,7 @@ import CategoriesPanel from "../components/categories/Panel";
 
 const Home: NextPage<{ posts: PostInterface[] }> = ({ posts }) => {
   useEffect(() => {
-    console.log("posts:", posts);
+    // console.log("posts:", posts);
   }, []);
 
   return (
@@ -33,8 +33,8 @@ const Home: NextPage<{ posts: PostInterface[] }> = ({ posts }) => {
           <div className="w-4/5 md:w-3/4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
               {posts.map((post,index) => (
-                <div className="col-span-1">
-                  <BlogCart key={index} post={post} />
+                <div key={index} className="col-span-1">
+                  <BlogCart  post={post} />
                 </div>
               ))}
             </div>

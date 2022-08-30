@@ -5,7 +5,7 @@ const HeaderComponent = () => {
   return (
     <header className="w-full flex justify-center bg-white text-gray-800 font-md py-5 border-b-2 sticky top-0 z-30">
       <div className="w-full  lg:w-3/4">
-        <div className="flex justify-between  px-5">
+        <div className="flex justify-between px-5 lg:px-0">
           <div className="flex items-center">
             {/* <Image src={} /> */}
             <nav className="px-3 items-center hidden md:flex">
@@ -14,9 +14,9 @@ const HeaderComponent = () => {
                   خانه
                 </a>
               </Link>
-              <Link href="/services">
+              <Link href="/categories">
                 <a className="px-2 py-1 mx-2 hover:text-blue-600 font-bold">
-                  خدمات
+                  دسته بندی ها
                 </a>
               </Link>
               <Link href="/pricing">
