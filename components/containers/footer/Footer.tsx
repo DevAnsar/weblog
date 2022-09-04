@@ -1,6 +1,9 @@
 import Image from "../../containers/Image";
 import FakeIcon from "../../../public/images/fake-news.png";
+import { RefreshIcon } from "@heroicons/react/solid";
+import useJoinToNewsletter from "../../../hooks/useJoinToNewsletter";
 const FooterComponent = () => {
+  const { email, updateEmail, loading, send } = useJoinToNewsletter();
   return (
     <footer className="bg-gradient-to-b from-gray-100 to-white  flex justify-center">
       <div className="w-full lg:w-3/4  py-5 px-5 grid grid-cols-5">
@@ -41,11 +44,17 @@ const FooterComponent = () => {
             <div className="mb-2 flex justify-center lg:justify-start">
               <input
                 placeholder="آدرس ایمیل خود را وارد کنید..."
-                className="px-3 py-2 ml-1 border-2 rounded-xl text-sm bg-slate-200  text-gray-700 border-gray-300 focus:ring-gray-300 focus:border-gray-400 text-center"
+                value={email}
+                onChange={(e) => updateEmail(e.target.value)}
+                className="px-3 py-2 ml-1 w-full border-2 rounded-xl text-sm bg-slate-200  text-gray-700 border-gray-300 focus:ring-gray-300 focus:border-gray-400 text-center"
               />
-              <a className="px-3 py-2 mx-1  text-center border rounded-xl text-sm bg-blue-500 hover:bg-blue-700 text-slate-50 hover:cursor-pointer">
-                وصل شدن
-              </a>
+              <button
+                onClick={send}
+                disabled={loading}
+                className="px-3 py-2 mx-1 w-24 flex justify-center items-center border rounded-xl text-sm bg-blue-500 hover:bg-blue-700 text-slate-50 hover:cursor-pointer"
+              >
+                {loading ? <RefreshIcon className="w-4 text-white animate-spin" /> : <span className="whitespace-nowrap text-sm lg:text-base">وصل شدن</span>}
+              </button>
             </div>
             <div className="text-gray-400 text-sm text-center lg:text-right">
               ما همواره سعی میکنیم بهترین و به روزترین مقالات آموزشی را در زمینه
