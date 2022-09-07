@@ -7,7 +7,7 @@ const Layout = ({ children }: PropsWithChildren) => {
     <div className="min-h-screen flex flex-col justify-between">
       <div>
         <HeaderComponent />
-        <main>{children}</main>
+        <main id="main">{children}</main>
       </div>
       <FooterComponent />
     </div>
