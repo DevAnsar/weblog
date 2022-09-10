@@ -6,7 +6,7 @@ const CoverImage: FC<ImageProps> = ({ src, alt }) => {
   return (
     <Image
       alt={alt}
-      title=""
+      title={alt}
       width="100%"
       height="100%"
       layout="responsive"

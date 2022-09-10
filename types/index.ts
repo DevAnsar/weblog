@@ -1,6 +1,8 @@
 export interface UserInterface {
   id: number;
   name: string;
+  username: string;
+  bio: string;
   image?: string;
   image_url?: string;
 }

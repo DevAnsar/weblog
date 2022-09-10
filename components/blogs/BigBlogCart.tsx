@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "../containers/Image";
 import WriterImage from "../users/WriterImage";
-import type { PostInterface } from "../../types";
+import type { GetPost } from "../../types";
 
-const BigBlogCart = ({ post }: { post: PostInterface }) => {
+const BigBlogCart = ({ post }: { post: GetPost }) => {
   return (
     <Link href={`/blogs/${post.slug}`}>
       <a>
@@ -22,8 +22,7 @@ const BigBlogCart = ({ post }: { post: PostInterface }) => {
               {post.excerpt}
             </span>
             <WriterImage
-              name={post.user.name}
-              image={post.user.image_url}
+              user={post.user}
               date={post.date_formatted}
             />
           </div>

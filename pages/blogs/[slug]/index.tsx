@@ -41,8 +41,7 @@ const Blog: NextPage<{ post: GetPost }> = ({ post }) => {
                   {post.excerpt}
                 </span>
                 <WriterImage
-                  name={post.user.name}
-                  image={post.user.image_url}
+                  user={post.user}
                   date={post.date_formatted}
                 />
               </div>
