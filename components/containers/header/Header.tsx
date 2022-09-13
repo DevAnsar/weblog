@@ -1,7 +1,8 @@
 import { MenuIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import type { PropsWithChildren } from "react";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ children }: PropsWithChildren) => {
   return (
     <header className="sticky w-full  bg-white/[0.7] dark:bg-black/[0.3] backdrop-blur-lg  flex justify-center text-gray-800 font-md py-5 border-b-2 top-0 z-30">
       <div className="w-full  lg:w-3/4">
@@ -55,6 +56,7 @@ const HeaderComponent = () => {
           </div>
         </div>
       </div>
+      {children}
     </header>
   );
 };
