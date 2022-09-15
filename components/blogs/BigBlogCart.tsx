@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "../containers/Image";
+import ScalableImage from "../containers/Image/ScalableImage";
 import WriterImage from "../users/WriterImage";
 import type { GetPost } from "../../types";
 
@@ -10,7 +10,7 @@ const BigBlogCart = ({ post }: { post: GetPost }) => {
         <div className="rounded-2xl overflow-hidden w-full h-60">
           <Link href={`/blogs/${post.slug}`}>
             <a>
-              <Image src={post.image_url} />
+              <ScalableImage src={post.image_url} />
             </a>
           </Link>
         </div>

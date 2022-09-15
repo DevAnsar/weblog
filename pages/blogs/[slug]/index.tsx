@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import type { NextPage, GetServerSideProps } from "next";
 import type { GetPost } from "../../../types";
 import Head from "../../../components/containers/head/Head";
-import Image from "../../../components/containers/Image";
+import ScalableImage from "../../../components/containers/Image/ScalableImage";
 import WriterImage from "../../../components/users/WriterImage";
 import Layout from "../../../components/containers/layout/Layout";
 import CategoriesPanel from "../../../components/categories/Panel";
@@ -44,7 +44,7 @@ const Blog: NextPage<{ post: GetPost }> = ({ post }) => {
             </div>
             <div className="mt-5">
               <div className="rounded-2xl overflow-hidden w-full h-72">
-                <Image src={post.image_url} />
+                <ScalableImage src={post.image_url} />
               </div>
             </div>
             <div className="flex flex-col justify-center w-full">

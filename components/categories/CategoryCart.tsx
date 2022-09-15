@@ -1,4 +1,4 @@
-import Image from "../containers/Image";
+import CoverImage from "../containers/Image/CoverImage";
 import Link from "next/link";
 import type { GetCategory } from "../../types";
 import categoryEmptyLogo from "../../public/images/category.png";
@@ -10,7 +10,7 @@ const CategoryCart = ({ category }: { category: GetCategory }) => {
         <a className="w-full rounded-2xl border border-blue-400 flex gap-5 overflow-hidden hover:shadow-lg shadow-cyan-600">
           <div className="w-1/3">
             <div className="w-full h-full p-5 bg-gradient-to-l from-cyan-100 to-white">
-              <Image className="h-full" src={categoryEmptyLogo} />
+              <CoverImage className="h-full" src={categoryEmptyLogo} />
             </div>
           </div>
           <div className="flex flex-col justify-center gap-1 w-2/3">

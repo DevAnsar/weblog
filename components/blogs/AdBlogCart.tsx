@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import Image from "../containers/Image";
+import ScalableImage from "../containers/Image/ScalableImage";
 import Link from "next/link";
-import type { PostInterface } from "../../types";
+import type { GetPost } from "../../types";
 
 const BlogCart = ({ post_id }: { post_id: number }) => {
-  const [post, setPost] = useState<PostInterface | undefined>(undefined);
+  const [post, setPost] = useState<GetPost | undefined>(undefined);
 
   useEffect(() => {
     console.log(post_id);
@@ -20,7 +20,7 @@ const BlogCart = ({ post_id }: { post_id: number }) => {
       <Link href={`/blogs/${post.slug}`}>
         <a>
           <div className="rounded-xl md:rounded-3xl overflow-hidden w-20 h-20 md:h-28 md:w-32 lg:h-28 lg:w-40">
-            <Image src={post.image_url} />
+            <ScalableImage src={post.image_url} />
           </div>
         </a>
       </Link>

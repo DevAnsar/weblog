@@ -6,7 +6,7 @@ import type { GetPost, GetCategory } from "../../../types";
 import Head from "../../../components/containers/head/Head";
 import Layout from "../../../components/containers/layout/Layout";
 import BlogCart from "../../../components/blogs/BlogCart";
-import Image from "../../../components/containers/Image";
+import ScalableImage from "../../../components/containers/Image/ScalableImage";
 import NotFindIcon from "../../../public/images/no-results.png";
 import { CursorClickIcon } from "@heroicons/react/solid";
 
@@ -37,7 +37,7 @@ const CategoryOostsPage: NextPage<{
             {posts.length === 0 && (
               <div className="w-full flex flex-col items-center mt-10">
                 <div className="w-44 md:w-52 lg:w-56">
-                  <Image className="h-full" src={NotFindIcon} />
+                  <ScalableImage className="h-full" src={NotFindIcon} />
                 </div>
                 <div className="w-full flex flex-col items-center">
                   <span className="text-lg md:text-2xl text-center font-bold text-gray-900 mt-10">

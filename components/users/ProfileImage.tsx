@@ -1,4 +1,4 @@
-import Image from "../containers/Image";
+import Image from "../containers/Image/CoverImage";
 import userIcon from "./../../public/images/person-1.jpeg";
 const ProfileImage = ({
   name,

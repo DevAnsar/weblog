@@ -1,4 +1,4 @@
-import Image from "../../containers/Image";
+import Image from "../Image/CoverImage";
 import FakeIcon from "../../../public/images/fake-news.png";
 import { RefreshIcon } from "@heroicons/react/solid";
 import useJoinToNewsletter from "../../../hooks/useJoinToNewsletter";

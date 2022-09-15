@@ -1,27 +1,16 @@
 import { useRef, FC } from "react";
 import { ImageProps } from "next/image";
-// import { ImageLoader } from "../../utils/helper";
 import styled from "styled-components";
-import useOnScreen from "./../../hooks/useOnScreen";
-import type {GetBlogStyledImageProps} from "../../types"
+import useOnScreen from "../../../hooks/useOnScreen";
+import type {GetBlogStyledImageProps} from "../../../types"
 
-const CoverImage: FC<ImageProps> = ({ src, alt }) => {
+const ScalableImage: FC<ImageProps> = ({ src, alt }) => {
   const ref = useRef(null);
   const isVisible = useOnScreen(ref);
   console.log("isVisible", isVisible);
   return (
-    // <Image
-    //   alt={alt}
-    //   title={alt}
-    //   width="100%"
-    //   height="100%"
-    //   layout="responsive"
-    //   objectFit="cover"
-    //   loader={ImageLoader}
-    //   src={src}
-    // />
     <Wrapper ref={ref}>
-      <StyledImage isVisible={isVisible} imgUrl={typeof src === "string" ? src : undefined} />
+      <StyledImage isVisible={isVisible} title={alt} imgUrl={typeof src === "string" ? src : undefined} />
     </Wrapper>
   );
 };
@@ -31,8 +20,6 @@ const Wrapper = styled.div`
   width: 100%;
   height : 100%;
 `;
-
-
 
 const StyledImage = styled.div<GetBlogStyledImageProps>`
   transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -55,4 +42,4 @@ const StyledImage = styled.div<GetBlogStyledImageProps>`
     }
   }
 `;
-export default CoverImage;
+export default ScalableImage;
