@@ -23,7 +23,7 @@ const SearchInput = ({
   return (
     <div
       id="searchInputBox"
-      className="w-4/5 md:w-3/4 lg:w-96 flex items-center border-2 border-slate-100 bg-slate-100 pr-4 pl-2 py-2 rounded-xl"
+      className="w-11/12 md:w-3/4 lg:w-96 flex items-center border-2 border-slate-100 bg-slate-100 pr-4 pl-2 py-2 rounded-xl"
     >
       <input
         placeholder="دنبال چه موضوعی میگردی؟"

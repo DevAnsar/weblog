@@ -51,10 +51,12 @@ const SearchPage: NextPage<{ q: string | null }> = ({ q }) => {
           <div className="w-full flex justify-center mb-10">
             <SearchInput initValue={(router.query as SearchQuery).q || ""} />
           </div>
-          <div className="w-full lg:w-3/4 px-5 lg:px-0 ">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="w-4/5 lg:w-3/4 lg:px-0 ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
               {searchResults.map((res: GetPost, index: number) => (
-                <PostCart key={index} post={res} />
+                <div key={index} className="col-span-1">
+                  <PostCart key={index} post={res} />
+                </div>
               ))}
             </div>
           </div>

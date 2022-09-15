@@ -8,7 +8,7 @@ const WriterImage = ({ user, date }: { user: UserInterface; date: string }) => {
     <Link href={`/user/${user?.username}`}>
     <a>
       <div className="flex items-center">
-        <div className="w-7 h-8 md:w-10 md:h-10 rounded-md overflow-hidden">
+        <div className="w-7 h-full md:w-10 md:h-10 rounded-md overflow-hidden">
           <Image
             alt=""
             title=""

@@ -41,3 +41,8 @@ export interface GetCategory {
   slug: string;
   posts_count?: number;
 }
+
+export interface GetBlogStyledImageProps {
+  readonly isVisible: boolean;
+  readonly imgUrl: string | undefined;
+}

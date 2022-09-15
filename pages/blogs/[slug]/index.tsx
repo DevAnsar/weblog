@@ -26,7 +26,7 @@ const Blog: NextPage<{ post: GetPost }> = ({ post }) => {
       <div className="absolute -bottom-[5px] w-full h-[5px] bg-blue-50">
         <span
           className="text-2xl bg-blue-500 h-full block rounded-md"
-          style={{ width: per+"%" }}
+          style={{ width: per + "%" }}
         />
       </div>
     );
@@ -35,32 +35,30 @@ const Blog: NextPage<{ post: GetPost }> = ({ post }) => {
     <>
       <Head title={`${post.title} | theJs.ir`} description={post.excerpt} />
       <Layout headerChild={<ArticleProgress per={scrollPercentage} />}>
-        <div className="flex justify-center my-16">
-          <div className="w-full lg:w-3/4 xl:w-2/4 px-5">
-            <div className="grid gap-x-5">
-              <div className="col-span-1 flex flex-col justify-center w-full">
-                <h1 className="font-bold text-2xl text-gray-900 leading-loose">
-                  {post.title}
-                </h1>
+        <div className="flex justify-center w-full my-10">
+          <div className="w-11/12 lg:w-3/4 xl:w-2/4 px-5">
+            <div className="flex flex-col justify-center w-full">
+              <h1 className="font-bold text-base lg:text-2xl text-gray-900 leading-loose">
+                {post.title}
+              </h1>
+            </div>
+            <div className="mt-5">
+              <div className="rounded-2xl overflow-hidden w-full h-72">
+                <Image src={post.image_url} />
               </div>
-              <div className="col-span-1 mt-5">
-                <div className="rounded-2xl overflow-hidden w-full h-72">
-                  <Image src={post.image_url} />
-                </div>
-              </div>
-              <div className="col-span-1 flex flex-col justify-center w-full">
-                <span className="font-bold text-base text-slate-400 mt-3 leading-loose">
-                  {post.excerpt}
-                </span>
-                <WriterImage user={post.user} date={post.date_formatted} />
-              </div>
-              <div
-                ref={scrollRef}
-                className="col-span-1 flex flex-col justify-center w-full mt-10 text-xl leading-10 text-slate-800"
-              >
-                {post.content}
-                {/* {ReactHtmlParser(post.content, { transform: transformPost })} */}
-              </div>
+            </div>
+            <div className="flex flex-col justify-center w-full">
+              <span className="font-bold text-sm lg:text-base text-slate-400 mt-3 leading-loose mb-3">
+                {post.excerpt}
+              </span>
+              <WriterImage user={post.user} date={post.date_formatted} />
+            </div>
+            <div
+              ref={scrollRef}
+              className="flex flex-col justify-center text-justify w-full mt-10 text-xl leading-10 text-slate-800"
+            >
+              {post.content}
+              {/* {ReactHtmlParser(post.content, { transform: transformPost })} */}
             </div>
           </div>
         </div>

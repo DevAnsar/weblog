@@ -24,13 +24,13 @@ const Home: NextPage<{ posts: GetPost[] }> = ({ posts }) => {
           </div>
         </div>
         <div className="flex justify-center my-24">
-          <div className="w-4/5 md:w-3/4">
+          <div className="w-11/12 md:w-3/4">
             <BigBlogCart  post={posts[0]} />
           </div>
         </div>
 
         <div className="flex justify-center my-24">
-          <div className="w-4/5 md:w-3/4">
+          <div className="w-11/12 md:w-3/4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
               {posts.map((post,index) => (
                 <div key={index} className="col-span-1">
